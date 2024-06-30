@@ -37,7 +37,7 @@ function init() {
     // Create initial phyllotaxis group
     //createPhyllotaxisGroup();
     let initialGroups = 24;
-    while (phyllotaxisGroups.length < numGroups) {
+    while (phyllotaxisGroups.length < initialGroups) {
         createPhyllotaxisGroup();
     }
     
