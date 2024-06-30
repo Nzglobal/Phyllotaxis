@@ -5,7 +5,7 @@ let scene, camera, renderer, controls;
 let phyllotaxisGroups = [];
 let audioContext, analyser, microphone;
 let dataArray, bufferLength;
-let numSpheres = 200; // Initial number of spheres
+let numSpheres = 500; // Initial number of spheres
 let c = 5; // Initial 'c' variable
 let wiggle = false; // Toggle for wiggle effect
 
@@ -35,8 +35,12 @@ function init() {
     controls.enableZoom = true;
 
     // Create initial phyllotaxis group
-    createPhyllotaxisGroup();
-
+    //createPhyllotaxisGroup();
+    let initialGroups = 24;
+    while (phyllotaxisGroups.length < numGroups) {
+        createPhyllotaxisGroup();
+    }
+    
     // Microphone setup
     navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
